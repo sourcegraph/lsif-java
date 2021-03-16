@@ -30,6 +30,10 @@ public final class GlobalSymbolsCache {
     return result;
   }
 
+  public String semanticdbSymbol(Element element, LocalSymbolsCache locals) {
+    return semanticdbSymbol((Symbol) element, locals);
+  }
+
   public boolean isNone(Symbol sym) {
     return sym == null;
   }
