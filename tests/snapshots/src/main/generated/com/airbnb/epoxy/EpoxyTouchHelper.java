@@ -323,6 +323,7 @@ public abstract class EpoxyTouchHelper {
 
   public static class DragBuilder4<U extends EpoxyModel> {
 //                    ^^^^^^^^^^^^ definition com/airbnb/epoxy/EpoxyTouchHelper#DragBuilder4#
+//                                 ^ definition com/airbnb/epoxy/EpoxyTouchHelper#DragBuilder4#[U]
 //                                           ^^^^^^^^^^ reference com/airbnb/epoxy/EpoxyModel#
 
     private final EpoxyController controller;
@@ -544,6 +545,7 @@ public abstract class EpoxyTouchHelper {
   public abstract static class DragCallbacks<T extends EpoxyModel>
 //                             ^^^^^^^^^^^^^ definition com/airbnb/epoxy/EpoxyTouchHelper#DragCallbacks#
 //                             ^^^^^^^^^^^^^ definition com/airbnb/epoxy/EpoxyTouchHelper#DragCallbacks#`<init>`().
+//                                           ^ definition com/airbnb/epoxy/EpoxyTouchHelper#DragCallbacks#[T]
 //                                                     ^^^^^^^^^^ reference com/airbnb/epoxy/EpoxyModel#
       implements EpoxyDragCallback<T> {
 //               ^^^^^^^^^^^^^^^^^ reference com/airbnb/epoxy/EpoxyDragCallback#
@@ -810,6 +812,7 @@ public abstract class EpoxyTouchHelper {
 
   public static class SwipeBuilder3<U extends EpoxyModel> {
 //                    ^^^^^^^^^^^^^ definition com/airbnb/epoxy/EpoxyTouchHelper#SwipeBuilder3#
+//                                  ^ definition com/airbnb/epoxy/EpoxyTouchHelper#SwipeBuilder3#[U]
 //                                            ^^^^^^^^^^ reference com/airbnb/epoxy/EpoxyModel#
 
     private final RecyclerView recyclerView;
@@ -1040,6 +1043,7 @@ public abstract class EpoxyTouchHelper {
   public abstract static class SwipeCallbacks<T extends EpoxyModel>
 //                             ^^^^^^^^^^^^^^ definition com/airbnb/epoxy/EpoxyTouchHelper#SwipeCallbacks#
 //                             ^^^^^^^^^^^^^^ definition com/airbnb/epoxy/EpoxyTouchHelper#SwipeCallbacks#`<init>`().
+//                                            ^ definition com/airbnb/epoxy/EpoxyTouchHelper#SwipeCallbacks#[T]
 //                                                      ^^^^^^^^^^ reference com/airbnb/epoxy/EpoxyModel#
       implements EpoxySwipeCallback<T> {
 //               ^^^^^^^^^^^^^^^^^^ reference com/airbnb/epoxy/EpoxySwipeCallback#

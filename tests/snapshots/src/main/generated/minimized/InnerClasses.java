@@ -28,6 +28,8 @@ public class InnerClasses {
 
   public interface InnerInterface<A, B> {
 //                 ^^^^^^^^^^^^^^ definition minimized/InnerClasses#InnerInterface#
+//                                ^ definition minimized/InnerClasses#InnerInterface#[A]
+//                                   ^ definition minimized/InnerClasses#InnerInterface#[B]
     B apply(A a);
 //  ^ reference minimized/InnerClasses#InnerInterface#[B]
 //    ^^^^^ definition minimized/InnerClasses#InnerInterface#apply().

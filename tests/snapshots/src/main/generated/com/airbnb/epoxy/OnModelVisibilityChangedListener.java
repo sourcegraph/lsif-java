@@ -12,8 +12,10 @@ import androidx.annotation.Px;
 /** Used to register an onVisibilityChanged callback with a generated model. */
 public interface OnModelVisibilityChangedListener<T extends EpoxyModel<V>, V> {
 //               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ definition com/airbnb/epoxy/OnModelVisibilityChangedListener#
+//                                                ^ definition com/airbnb/epoxy/OnModelVisibilityChangedListener#[T]
 //                                                          ^^^^^^^^^^ reference com/airbnb/epoxy/EpoxyModel#
 //                                                                     ^ reference com/airbnb/epoxy/OnModelVisibilityChangedListener#[V]
+//                                                                         ^ definition com/airbnb/epoxy/OnModelVisibilityChangedListener#[V]
 
   /**
    * This will be called once the view visible part changes.

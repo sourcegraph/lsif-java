@@ -36,6 +36,7 @@ import androidx.annotation.Px;
  */
 public abstract class EpoxyModelWithHolder<T extends EpoxyHolder> extends EpoxyModel<T> {
 //                    ^^^^^^^^^^^^^^^^^^^^ definition com/airbnb/epoxy/EpoxyModelWithHolder#
+//                                         ^ definition com/airbnb/epoxy/EpoxyModelWithHolder#[T]
 //                                                   ^^^^^^^^^^^ reference com/airbnb/epoxy/EpoxyHolder#
 //                                                                        ^^^^^^^^^^ reference com/airbnb/epoxy/EpoxyModel#
 //                                                                                   ^ reference com/airbnb/epoxy/EpoxyModelWithHolder#[T]

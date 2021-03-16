@@ -10,8 +10,10 @@ import com.airbnb.epoxy.VisibilityState.Visibility;
 /** Used to register an onVisibilityChanged callback with a generated model. */
 public interface OnModelVisibilityStateChangedListener<T extends EpoxyModel<V>, V> {
 //               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ definition com/airbnb/epoxy/OnModelVisibilityStateChangedListener#
+//                                                     ^ definition com/airbnb/epoxy/OnModelVisibilityStateChangedListener#[T]
 //                                                               ^^^^^^^^^^ reference com/airbnb/epoxy/EpoxyModel#
 //                                                                          ^ reference com/airbnb/epoxy/OnModelVisibilityStateChangedListener#[V]
+//                                                                              ^ definition com/airbnb/epoxy/OnModelVisibilityStateChangedListener#[V]
 
   /**
    * This will be called once the visibility changed.

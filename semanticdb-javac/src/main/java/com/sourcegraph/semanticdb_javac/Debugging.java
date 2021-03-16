@@ -7,6 +7,6 @@ public final class Debugging {
     if (any instanceof String) {
       any = String.format("\"%s\"", any);
     }
-    System.out.printf("%s:%s %s%n", trace.getFileName(), trace.getLineNumber(), any);
+    System.err.printf("%s:%s %s%n", trace.getFileName(), trace.getLineNumber(), any);
   }
 }

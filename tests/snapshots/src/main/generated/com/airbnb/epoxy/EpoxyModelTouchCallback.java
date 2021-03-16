@@ -40,6 +40,7 @@ import androidx.recyclerview.widget.RecyclerView;
  */
 public abstract class EpoxyModelTouchCallback<T extends EpoxyModel>
 //                    ^^^^^^^^^^^^^^^^^^^^^^^ definition com/airbnb/epoxy/EpoxyModelTouchCallback#
+//                                            ^ definition com/airbnb/epoxy/EpoxyModelTouchCallback#[T]
 //                                                      ^^^^^^^^^^ reference com/airbnb/epoxy/EpoxyModel#
     extends EpoxyTouchHelperCallback implements EpoxyDragCallback<T>, EpoxySwipeCallback<T> {
 //          ^^^^^^^^^^^^^^^^^^^^^^^^ reference com/airbnb/epoxy/EpoxyTouchHelperCallback#

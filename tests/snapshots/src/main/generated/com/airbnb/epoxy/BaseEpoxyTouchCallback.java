@@ -7,6 +7,7 @@ import android.view.View;
 
 interface BaseEpoxyTouchCallback<T extends EpoxyModel> {
 //        ^^^^^^^^^^^^^^^^^^^^^^ definition com/airbnb/epoxy/BaseEpoxyTouchCallback#
+//                               ^ definition com/airbnb/epoxy/BaseEpoxyTouchCallback#[T]
 //                                         ^^^^^^^^^^ reference com/airbnb/epoxy/EpoxyModel#
 
   /**

@@ -53,7 +53,6 @@ message Signature {
 message ClassSignature {
   Scope type_parameters = 1;
   repeated Type parents = 2;
-  Type self = 3;
   Scope declarations = 4;
 }
 
@@ -65,7 +64,6 @@ message MethodSignature {
 
 message TypeSignature {
   Scope type_parameters = 1;
-  Type lower_bound = 2;
   Type upper_bound = 3;
 }
 

@@ -7,7 +7,9 @@ import android.widget.CompoundButton;
 
 public interface OnModelCheckedChangeListener<T extends EpoxyModel<?>, V> {
 //               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ definition com/airbnb/epoxy/OnModelCheckedChangeListener#
+//                                            ^ definition com/airbnb/epoxy/OnModelCheckedChangeListener#[T]
 //                                                      ^^^^^^^^^^ reference com/airbnb/epoxy/EpoxyModel#
+//                                                                     ^ definition com/airbnb/epoxy/OnModelCheckedChangeListener#[V]
   /**
    * Called when the view bound to the model is checked.
    *

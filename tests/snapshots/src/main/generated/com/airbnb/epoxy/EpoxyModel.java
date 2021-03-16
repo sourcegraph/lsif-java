@@ -72,6 +72,7 @@ import static com.airbnb.epoxy.IdUtils.hashString64Bit;
  */
 public abstract class EpoxyModel<T> {
 //                    ^^^^^^^^^^ definition com/airbnb/epoxy/EpoxyModel#
+//                               ^ definition com/airbnb/epoxy/EpoxyModel#[T]
 
   /**
    * Counts how many of these objects are created, so that each new object can have a unique id .

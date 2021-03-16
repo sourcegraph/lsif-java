@@ -7,6 +7,7 @@ import com.sun.tools.javac.code.Symbol;
 import com.sun.tools.javac.tree.EndPosTable;
 import com.sun.tools.javac.tree.JCTree;
 import com.sun.tools.javac.util.JCDiagnostic;
+import com.sun.tools.javac.util.List;
 import com.sun.tools.javac.util.Position;
 import com.sourcegraph.semanticdb_javac.Semanticdb.SymbolOccurrence.Role;
 
@@ -19,6 +20,8 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Optional;
+
+import static com.sourcegraph.semanticdb_javac.Debugging.pprint;
 
 /** Walks the AST of a typechecked compilation unit and generates a SemanticDB TextDocument. */
 public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
@@ -53,7 +56,7 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
   }
 
   public Semanticdb.TextDocument buildTextDocument(CompilationUnitTree tree) {
-
+    // pprint(semanticdbUri());
     this.scan(tree, null); // Trigger recursive AST traversal to collect SemanticDB information.
 
     return Semanticdb.TextDocument.newBuilder()
@@ -79,9 +82,8 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
 
   private void emitSymbolInformation(Symbol sym) {
     Semanticdb.SymbolInformation.Builder builder =
-        Semanticdb.SymbolInformation.newBuilder()
-            .setSymbol(semanticdbSymbol(sym))
-            .setSignature(semanticdbSignature(sym));
+        Semanticdb.SymbolInformation.newBuilder().setSymbol(semanticdbSymbol(sym));
+    // .setSignature(semanticdbSignature(sym));
     Semanticdb.Documentation documentation = semanticdbDocumentation(sym);
     if (documentation != null) builder.setDocumentation(documentation);
 
@@ -102,6 +104,17 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
       JCTree.JCClassDecl cls = (JCTree.JCClassDecl) node;
       emitSymbolOccurrence(
           cls.sym, cls, Role.DEFINITION, CompilerRange.FROM_POINT_WITH_TEXT_SEARCH);
+
+      List<JCTree.JCTypeParameter> typeParameters = cls.getTypeParameters();
+      int i = 0;
+      for (Symbol.TypeVariableSymbol typeSym : cls.sym.getTypeParameters()) {
+        emitSymbolOccurrence(
+            typeSym,
+            typeParameters.get(i),
+            Role.DEFINITION,
+            CompilerRange.FROM_POINT_TO_SYMBOL_NAME);
+        i++;
+      }
     }
     return super.visitClass(node, unused);
   }
@@ -171,9 +184,7 @@ public class SemanticdbVisitor extends TreePathScanner<Void, Void> {
   // =================================================
 
   private Semanticdb.Signature semanticdbSignature(Symbol sym) {
-    if(sym instanceof Symbol.ClassSymbol) {
-
-    }
+    return new SemanticdbSignatures(globals, locals).generateSignature(sym);
   }
 
   private String semanticdbSymbol(Symbol sym) {

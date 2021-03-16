@@ -6,6 +6,7 @@ package com.airbnb.epoxy;
  */
 public interface StyleBuilderCallback<T> {
 //               ^^^^^^^^^^^^^^^^^^^^ definition com/airbnb/epoxy/StyleBuilderCallback#
+//                                    ^ definition com/airbnb/epoxy/StyleBuilderCallback#[T]
   void buildStyle(T builder);
 //     ^^^^^^^^^^ definition com/airbnb/epoxy/StyleBuilderCallback#buildStyle().
 //                ^ reference com/airbnb/epoxy/StyleBuilderCallback#[T]

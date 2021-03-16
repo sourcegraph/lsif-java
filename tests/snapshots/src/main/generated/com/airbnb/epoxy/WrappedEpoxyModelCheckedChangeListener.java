@@ -22,7 +22,9 @@ import androidx.recyclerview.widget.RecyclerView;
  */
 public class WrappedEpoxyModelCheckedChangeListener<T extends EpoxyModel<?>, V>
 //           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ definition com/airbnb/epoxy/WrappedEpoxyModelCheckedChangeListener#
+//                                                  ^ definition com/airbnb/epoxy/WrappedEpoxyModelCheckedChangeListener#[T]
 //                                                            ^^^^^^^^^^ reference com/airbnb/epoxy/EpoxyModel#
+//                                                                           ^ definition com/airbnb/epoxy/WrappedEpoxyModelCheckedChangeListener#[V]
     implements OnCheckedChangeListener {
 //             ^^^^^^^^^^^^^^^^^^^^^^^ reference _root_/
 
